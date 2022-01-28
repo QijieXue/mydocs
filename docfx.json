@@ -34,7 +34,8 @@
     "resource": [
       {
         "files": [
-          "images/**"
+          "images/**",
+          "articles/**/images/**"
         ]
       }
     ],
@@ -45,11 +46,11 @@
         ],
         "exclude": [
           "obj/**",
-          "_site/**"
+          "output/**"
         ]
       }
     ],
-    "dest": "_site",
+    "dest": "output",
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
