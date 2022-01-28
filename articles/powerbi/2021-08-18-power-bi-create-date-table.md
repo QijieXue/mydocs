@@ -1,6 +1,6 @@
 # Power BI创建时间表
 
-![Screenshot of Date table](images/power-bi-date-table.png)
+[![Screenshot of Date table](images/power-bi-date-table.png)](images/power-bi-date-table.png#lightbox)
 
 **需求**： 为更好地从时间维度来分析数据，我们需要创建一个没有间隔的时间序列表，这个文章手把手完成时间序列表Date表格的创建。
 首先，新建表，表命名为Date.
