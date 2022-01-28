@@ -1,4 +1,7 @@
-# Following are DocFx Flavored Markdown (DFM)
+# 这个网站使用DocFx生成
+
+Following are DocFx Flavored Markdown (DFM)
+**以下是DocFx支持的非标准markdown语法**
 
 ## Alerts
 
