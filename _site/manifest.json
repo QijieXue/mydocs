@@ -1,0 +1,248 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/Administrator/source/repos/DocFx/ClassLibrary1",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ClassLibrary1.Class1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ClassLibrary1.Class1.html",
+          "hash": "db0X6T6t3QTPX+I8QXjxPKWZ/8m3mZ42CdDt422SZBU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ClassLibrary1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ClassLibrary1.html",
+          "hash": "YBkUpOmdSvowhNRgEtrinlZcolzgkhJxJkLPs2ioFGU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "y62bCGSFdLuW1zcKCjSbV7wKd5F66nOkl0Gjt0BN+uU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "k0k9iKQyA5un2s1mksVos2q6SpLB9XAMB+fva7Hvhbo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "Z4GwVB6bhqa50pXVaA81eFXl38IJzHh0Spn8tVd2oEw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/javascript/2021-12-22-javascript-api.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/javascript/2021-12-22-javascript-api.html",
+          "hash": "rnFImhUsVuHyjrK+89Q5UqQFdgf4199gSa7QPAwyrP0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/javascript/2021-12-22-javascript-async.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/javascript/2021-12-22-javascript-async.html",
+          "hash": "itTESiqbytJEaEI/arlKImyvIuDEEMkOaP4D8WAmSMU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/javascript/2021-12-22-javascript-notes.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/javascript/2021-12-22-javascript-notes.html",
+          "hash": "aHV6JrrOULhpqSbxW65ro02ZquAv10dHH4aIUTYYgJ4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/javascript/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/javascript/intro.html",
+          "hash": "UtEwpITIRRYakyzOyov5VCNMRsyvEdRtMmKEGrpgGKY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/javascript/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/javascript/toc.html",
+          "hash": "m4TxDj5aLwRXr75JfipWqZSMqbmav1A/soZADnWMbhU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/powerbi/2021-08-18-power-bi-create-date-table.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/powerbi/2021-08-18-power-bi-create-date-table.html",
+          "hash": "G0m3qcMeHYOP3LiE7Le6ZktfWwW2ne1ikLN6g0+l+GM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/powerbi/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/powerbi/intro.html",
+          "hash": "86yqgpJOAHnJdczg9YVktwih/alrl9IOLzRlby28HVI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/powerbi/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/powerbi/toc.html",
+          "hash": "8phzKqc5IyxlngfR7vTjb45HL8s5ZXRK/SI4+laAJjI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "6JzgGyYHItENgOi9Eg0NjyA1IoI6EzcFWJWUv1oerE8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "itTPwJOwqUNMsntm/9PrRD/ELxYFy6IQ7LeyAu9gFsE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "WSuRrYiGwKKMbtdG9z8W9fXmLoCyTnGg9AxbPKLXm2Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Disable incremental build by force rebuild option.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "ForceRebuild"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 9,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 2,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

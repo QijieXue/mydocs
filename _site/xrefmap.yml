@@ -1,0 +1,41 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: ClassLibrary1
+  name: ClassLibrary1
+  href: api/ClassLibrary1.html
+  commentId: N:ClassLibrary1
+  fullName: ClassLibrary1
+  nameWithType: ClassLibrary1
+- uid: ClassLibrary1.Class1
+  name: Class1
+  href: api/ClassLibrary1.Class1.html
+  commentId: T:ClassLibrary1.Class1
+  fullName: ClassLibrary1.Class1
+  nameWithType: Class1
+- uid: ClassLibrary1.Class1.ReturnFalseAlways
+  name: ReturnFalseAlways()
+  href: api/ClassLibrary1.Class1.html#ClassLibrary1_Class1_ReturnFalseAlways
+  commentId: M:ClassLibrary1.Class1.ReturnFalseAlways
+  fullName: ClassLibrary1.Class1.ReturnFalseAlways()
+  nameWithType: Class1.ReturnFalseAlways()
+- uid: ClassLibrary1.Class1.ReturnFalseAlways*
+  name: ReturnFalseAlways
+  href: api/ClassLibrary1.Class1.html#ClassLibrary1_Class1_ReturnFalseAlways_
+  commentId: Overload:ClassLibrary1.Class1.ReturnFalseAlways
+  isSpec: "True"
+  fullName: ClassLibrary1.Class1.ReturnFalseAlways
+  nameWithType: Class1.ReturnFalseAlways
+- uid: ClassLibrary1.Class1.ReturnTrueAlways
+  name: ReturnTrueAlways()
+  href: api/ClassLibrary1.Class1.html#ClassLibrary1_Class1_ReturnTrueAlways
+  commentId: M:ClassLibrary1.Class1.ReturnTrueAlways
+  fullName: ClassLibrary1.Class1.ReturnTrueAlways()
+  nameWithType: Class1.ReturnTrueAlways()
+- uid: ClassLibrary1.Class1.ReturnTrueAlways*
+  name: ReturnTrueAlways
+  href: api/ClassLibrary1.Class1.html#ClassLibrary1_Class1_ReturnTrueAlways_
+  commentId: Overload:ClassLibrary1.Class1.ReturnTrueAlways
+  isSpec: "True"
+  fullName: ClassLibrary1.Class1.ReturnTrueAlways
+  nameWithType: Class1.ReturnTrueAlways

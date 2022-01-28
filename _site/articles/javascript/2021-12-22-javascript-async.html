@@ -1,0 +1,333 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>&#24322;&#27493;JavaScript </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="&#24322;&#27493;JavaScript ">
+    <meta name="generator" content="docfx 2.59.0.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="异步javascript">异步JavaScript</h1>
+
+<h2 id="javascript-timeouts-和-intervals">JavaScript Timeouts 和 intervals</h2>
+<p><strong><code>setTimeout()</code></strong><br>
+<code>setTimeout()</code>在指定的时间后执行一段特定的代码。<br>
+示例：</p>
+<pre><code class="lang-javascript">function sayHi(who){
+    alert('Hello, '+who+' welcome join!');
+}
+
+let greeting = setTimeout(sayHi, 5000, 'Qijie');
+</code></pre>
+<p>使用<code>clearTimeout()</code>来取消上面的超时。</p>
+<pre><code class="lang-javascript">clearTimeout(greeting);
+</code></pre>
+<p><strong><code>setInterval()</code></strong><br>
+<code>setInterval()</code>每隔一段时间执行一段特定的代码。
+示例：</p>
+<pre><code class="lang-javascript">function displayTime(){
+    let date = new Date();
+    let time = date.toLocaleTimeString();
+    document.getElementById('divDate').textContent = time;
+}
+
+let setTime = setInterval(displayTime, 2000);
+</code></pre>
+<p>使用<code>clearInterval()</code>来清除intervals。</p>
+<pre><code class="lang-javascript">clearInterval(setTime);
+</code></pre>
+<p>可以使用递归<code>setTimeout()</code>实现每隔100毫米执行一次函数：</p>
+<pre><code class="lang-javascript">let i = 1;
+setTimeout(function run(){
+    console.log(i);
+    i++;
+    setTimeout(run, 100);
+}, 100);
+</code></pre>
+<p>那么， <code>setTimeout()</code>和<code>setInterval()</code>有什么不同吗？ <code>setTimeout()</code>保证了每次等待的时间间隔相同。不管执行函数的时间长短，每次间隔都是100毫秒。<br>
+而使用<code>setInterval()</code>时，间隔时间包含了执行代码所花费的时间。假设执行代码需要40毫秒， 那么最终间隔只有60毫秒。</p>
+<p><strong><code>requestAnimationFrame()</code></strong><br>
+<code>requestAnimationFrame()</code> 是一个专门的循环函数，旨在浏览器中高效运行动画。<br>
+我们没有为<code>requestAnimationFrame()</code>指定时间间隔；它只是在当前条件下尽可能快速平稳地运行它。如果动画由于某些原因而处于屏幕外浏览器也不会浪费时间运行它。<br>
+示例</p>
+<pre><code class="lang-javascript">
+//requestAnimationFrame
+
+const spinner = document.querySelector('#spinner');
+let rotateCount = 0;
+let rAF;
+let startTime = null;
+let isRunning = true;
+
+function draw(timestamp){
+    if(!startTime)
+    {
+        startTime = timestamp;
+    }
+
+    rotateCount = (timestamp - startTime)/3;
+    if(rotateCount &gt; 359)
+    {
+        rotateCount=rotateCount%360;
+    }
+
+    spinner.style.transform = `rotate(${rotateCount}deg)`;
+    rAF = requestAnimationFrame(draw);
+    isRunning = true;
+}
+
+draw();
+
+
+document.querySelector('body').addEventListener('click', function(){
+    if(isRunning)
+    {
+        cancelAnimationFrame(rAF);
+        isRunning = false;
+    }
+    else{
+        draw();
+    }
+})
+</code></pre>
+<h2 id="使用async-callbacks回调函数实现异步请求">使用Async callbacks（回调函数）实现异步请求</h2>
+<p><strong>callback示例</strong><br>
+使用回调函数获取网上图片资源，并显示在页面中。</p>
+<pre><code class="lang-javascript">let imgUrl = &quot;https://www.collinsdictionary.com/images/full/apple_158989157.jpg&quot;;
+
+function loadAsset(url, type, callback){
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.responseType = type;
+    xhr.onload = function(){
+        callback(xhr.response);
+    };
+    xhr.send();
+}
+
+function displayImage(blob){
+    let objUrl = URL.createObjectURL(blob);
+    let image = document.createElement('img');
+    image.src = objUrl;
+    document.body.appendChild(image);
+}
+
+loadAsset(imgUrl, 'blob', displayImage);
+</code></pre>
+<h2 id="promise">Promise</h2>
+<p><strong>Promise</strong>是JavaScript中相对较新的功能，允许你推迟进一步的操作，直到上一个操作完成或响应其失败。</p>
+<p>本质上，Promise是一个对象，代表操作的中间状态，它保证在未来可能返回某种结果。</p>
+<ol>
+<li>创建promise时，它既不是成功也不是失败状态。这个状态叫作<strong>pending</strong>（待定）。</li>
+<li>当promise返回时，称为 <strong>resolved</strong>（已解决）。
+<ol>
+<li>一个成功<strong>resolved</strong>的promise称为<strong>fullfilled</strong>（实现）。它返回一个值，可以通过将<code>.then()</code>块链接到promise链的末尾来访问该值。 <code>.then()</code>块中的执行程序函数将包含promise的返回值。</li>
+<li>一个不成功<strong>resolved</strong>的promise被称为<strong>rejected</strong>（拒绝）了。它返回一个原因（reason），一条错误消息，说明为什么拒绝promise。可以通过将<code>.catch()</code>块链接到promise链的末尾来访问此原因。</li>
+</ol>
+</li>
+</ol>
+<p>Promise解决了回调函数的嵌套问题(callback hell)，在用回调函数时，你的代码可能难以阅读， 而且每个嵌套都要调用相应的错误处理。</p>
+<p>而使用Promise改良后，我们能够一个接一个地链接多个异步操作，因为每个<code>.then()</code>块返回一个新的promise，当所有<code>.then()</code>块链接完毕, 只需要一个<code>.catch()</code>块来处理所有错误。</p>
+<p><strong>Promise示例</strong><br>
+使用fetch获取网上图片资源，并显示在页面中。</p>
+<pre><code class="lang-javascript">let imgUrl = &quot;https://www.collinsdictionary.com/images/full/apple_158989157.jpg&quot;;
+
+fetch(imgUrl).then(function(response){
+    if(response.type == 'cors')
+    {
+        return response.blob();
+    }
+    else if(response.type == 'text'){
+        return response.text();
+    }
+    else{
+        throw new Error(`Type not correct, expect blob. returned ${response.type}`)
+    }
+    console.log(response.type);
+})
+.then(function(blob){
+    let objectURL = URL.createObjectURL(blob);
+    let image = document.createElement('img');
+    image.src = objectURL;
+    document.body.appendChild(image);
+})
+.catch(error =&gt; {
+    console.log(error.message);
+})
+</code></pre>
+<p><strong>Promise的另一种写法</strong></p>
+<pre><code class="lang-javascript">let imgUrl = &quot;https://www.collinsdictionary.com/images/full/apple_158989157.jpg&quot;;
+
+console.log('Starting...')
+let promise = fetch(imgUrl);
+console.log('Promise finish')
+let promise2 = promise.then(response =&gt; {
+    console.log('In promise 2')
+   
+    return response.blob();
+})
+
+let promise3 = promise2.then(blob =&gt; {
+    console.log('In promise 3')
+    let objUrl = URL.createObjectURL(blob);
+    let image = document.createElement('img');
+    image.src = objUrl;
+    document.body.appendChild(image);
+})
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>同步的<code>try...catch</code>结构不可以和Promise一起使用。</p>
+</div>
+<h2 id="async-和-await">async 和 await</h2>
+<p><code>async</code>关键字和<code>await</code>关键字时最近添加到JavaScript语言里面的，它使得异步代码更易于编写和阅读。 把<code>async</code>关键字放在函数声明之前，使其成为异步函数。异步函数是一个知道怎样使用<code>await</code>关键字调用异步代码的函数。</p>
+<p>我们使用异步函数和await关键字写个简单示例：</p>
+<pre><code class="lang-javascript">let hello = async function(){
+    return greeting = await Promise.resolve(&quot;hello&quot;);
+}
+
+hello().then(function(message){
+    console.log(message);
+});
+</code></pre>
+<p>我们将Promise方法从网上资源获取图片，显示在页面上的代码用<code>async</code>和<code>await</code>关键字重新写一遍:</p>
+<pre><code class="lang-javascript">async function fetchImage()
+{
+    let imgUrl = &quot;https://www.collinsdictionary.com/images/full/apple_158989157.jpg&quot;;
+    let response = await fetch(imgUrl);
+    let blob = await response.blob();
+    let imageURL = URL.createObjectURL(blob);
+    let image = document.createElement('img');
+    image.src = imageURL;
+    document.body.appendChild(image);
+}
+
+fetchImage().catch(error=&gt; {
+    console.log(error.message);
+});
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>注意： 同步的<code>try...catch</code>结构可以和<code>async</code>/<code>await</code>一起使用。</p>
+</div>
+<p>以上代码可以修改为:</p>
+<pre><code class="lang-javascript">async function fetchImage()
+{
+    try{
+        let imgUrl = &quot;https://www.collinsdictionary.com/images/full/apple_158989157.jpg&quot;;
+        let response = await fetch(imgUrl);
+        let blob = await response.blob();
+        let imageURL = URL.createObjectURL(blob);
+        let image = document.createElement('img');
+        image.src = imageURL;
+        document.body.appendChild(image);
+    }
+    catch(err)
+    {
+        console.log(err);
+        console.log(err.message);
+    }
+    finally{
+        console.log('finished');
+    }
+}
+
+fetchImage();
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
