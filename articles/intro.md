@@ -6,7 +6,7 @@ Following are DocFx Flavored Markdown (DFM)
 ## Alerts
 
 > [!NOTE]
-> This is a note which needs your attention, but it's not super important.
+> This  a note which needs your attention, but it's not super important.
 
 > [!TIP]
 > This is a note which needs your attention, but it's not super important.

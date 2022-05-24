@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Users/Administrator/source/repos/DocFx/ClassLibrary1",
+  "source_base_path": "C:/Qijie/GitHub/mydocs",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -9,10 +9,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ClassLibrary1.Class1.html",
-          "hash": "db0X6T6t3QTPX+I8QXjxPKWZ/8m3mZ42CdDt422SZBU="
+          "hash": "4kr8HuGNfRWQ9j2SBflZfBSe/uMDkNQZX5O7BDa2Ruw="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -24,7 +24,7 @@
           "hash": "YBkUpOmdSvowhNRgEtrinlZcolzgkhJxJkLPs2ioFGU="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -33,10 +33,10 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "y62bCGSFdLuW1zcKCjSbV7wKd5F66nOkl0Gjt0BN+uU="
+          "hash": "bQ8sjy+6ye6ejHIHdBrxMHYlD75aiHMickm9EcSNJbA="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -57,10 +57,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "IN1DFIYL55xfySbnEsriZhweoKc/seOhwFYIbMysyWY="
+          "hash": "HrtiGHfhkI8XNtA8YtQfLF2mxGmBYB36UEFwz8QIDJ4="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -69,10 +69,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/javascript/2021-12-22-javascript-api.html",
-          "hash": "rnFImhUsVuHyjrK+89Q5UqQFdgf4199gSa7QPAwyrP0="
+          "hash": "7oBFPMmQo7QqVU7pcjBfsdueh/ZlCni95smdkZhY7Os="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -81,10 +81,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/javascript/2021-12-22-javascript-async.html",
-          "hash": "itTESiqbytJEaEI/arlKImyvIuDEEMkOaP4D8WAmSMU="
+          "hash": "JbkAtPYgY+zbGfN9VTLSd6XvIIFSO1Fd83qkKWyXywU="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -93,10 +93,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/javascript/2021-12-22-javascript-notes.html",
-          "hash": "aHV6JrrOULhpqSbxW65ro02ZquAv10dHH4aIUTYYgJ4="
+          "hash": "ds7bM6VeJpYX9phbgTg8XrzVBQgAKydRLXLs/Vq7N8g="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -105,10 +105,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/javascript/intro.html",
-          "hash": "UtEwpITIRRYakyzOyov5VCNMRsyvEdRtMmKEGrpgGKY="
+          "hash": "h8e1KpbhxNerGi+TQH/0hiBDNyockQg36nM6h4PH6xo="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -129,7 +129,96 @@
       "output": {
         ".html": {
           "relative_path": "articles/powerbi/2021-08-18-power-bi-create-date-table.html",
-          "hash": "IvOIgQn3WK0ro2jtHARYhYWcWp8s11398x+7iJdnzUU="
+          "hash": "b6/WsTBL6Jwzw/5Ykw1olOefm3Y2+6Ury+LjC/SwRlw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/powerbi/2022-05-24-power-bi-covid-19-sha-report.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/powerbi/2022-05-24-power-bi-covid-19-sha-report.html",
+          "hash": "QIOgQ0qQzZ6mk2vQPcNEhQac3MsFoJyIz9jb7jY3T4g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/powerbi/images/2022-bi-dax-input.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/powerbi/images/2022-bi-dax-input.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/powerbi/images/2022-bi-folder.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/powerbi/images/2022-bi-folder.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/powerbi/images/2022-bi-load-data-remove-rows.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/powerbi/images/2022-bi-load-data-remove-rows.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/powerbi/images/2022-bi-new-measure-btn.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/powerbi/images/2022-bi-new-measure-btn.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/powerbi/images/2022-bi-percentage.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/powerbi/images/2022-bi-percentage.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/powerbi/images/2022-bi-result.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/powerbi/images/2022-bi-result.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/powerbi/images/covid-19-case-sample.xlsx",
+      "output": {
+        "resource": {
+          "relative_path": "articles/powerbi/images/covid-19-case-sample.xlsx"
         }
       },
       "is_incremental": false,
@@ -152,7 +241,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/powerbi/intro.html",
-          "hash": "86yqgpJOAHnJdczg9YVktwih/alrl9IOLzRlby28HVI="
+          "hash": "oaLBvykLHMQre71LroP1wdLpbEwFnB6YGoFtjFOrWsc="
         }
       },
       "is_incremental": false,
@@ -164,7 +253,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/powerbi/toc.html",
-          "hash": "8phzKqc5IyxlngfR7vTjb45HL8s5ZXRK/SI4+laAJjI="
+          "hash": "y3r1lne9DcxdYuGfN2iyHATlssfwOX8n7OPHrHM+GBg="
         }
       },
       "is_incremental": false,
@@ -188,10 +277,10 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "itTPwJOwqUNMsntm/9PrRD/ELxYFy6IQ7LeyAu9gFsE="
+          "hash": "XOQSRbNyMPShaFMYAXLByZzrFRdxXOag35nM/keHpZM="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -210,25 +299,23 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": false,
-        "details": "Disable incremental build by force rebuild option.",
+        "can_incremental": true,
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0,
-        "full_build_reason_code": "ForceRebuild"
+        "skipped_file_count": 0
       },
       "processors": {
         "ConceptualDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 9,
-          "skipped_file_count": 0
+          "total_file_count": 10,
+          "skipped_file_count": 9
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 2,
-          "skipped_file_count": 0
+          "skipped_file_count": 2
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
@@ -248,8 +335,8 @@
     },
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0

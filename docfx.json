@@ -6,7 +6,7 @@
           "files": [
             "**.csproj"
           ],
-          "src": "C:\\Users\\Administrator\\source\\repos\\DocFx\\ClassLibrary1"
+          "src": "C:\\Qijie\\GitHub\\mydocs"
         }
       ],
       "dest": "api",

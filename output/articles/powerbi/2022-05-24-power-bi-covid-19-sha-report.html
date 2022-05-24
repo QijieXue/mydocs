@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Power BI&#21019;&#24314;&#24230;&#37327;&#20540;-&#27719;&#24635;&#65292;&#21344;&#27604; </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Power BI&#21019;&#24314;&#24230;&#37327;&#20540;-&#27719;&#24635;&#65292;&#21344;&#27604; ">
+    <meta name="generator" content="docfx 2.59.0.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="power-bi创建度量值-汇总占比">Power BI创建度量值-汇总，占比</h1>
+
+<p>使用Power BI Desktop工具创建报表来对业务数据进行加工、处理、分析和呈现。我们使用上海疫情数据集为例，手把手创建一个多维度的报表。</p>
+<h2 id="报表结果">报表结果：</h2>
+<p><a href="images/2022-bi-result.png#lightbox"><img src="images/2022-bi-result.png" alt="Screenshot of Bi report"></a></p>
+<h2 id="数据准备">数据准备</h2>
+<h3 id="获取数据文件">获取数据文件</h3>
+<ol>
+<li>从以下位置下载Excel数据文件 <a href="images/covid-19-case-sample.xlsx">covid-19-case-sample.xlsx</a>.</li>
+<li>Excel表格中的数据结构如下：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>类型</th>
+<th>来源</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="使用power-bi-desktop连接到excel数据源">使用Power BI Desktop连接到Excel数据源</h3>
+<p>使用Power BI Desktop连接到Excel数据源。</p>
+<ol>
+<li>Power BI Desktop</li>
+<li>获取数据</li>
+<li>Excel</li>
+<li>转换数据</li>
+<li>在Power Query编辑器中， 选择<strong>删除行</strong>，依次选择<strong>删除空行</strong>，和<strong>删除错误</strong>。
+<img src="images/2022-bi-load-data-remove-rows.png" alt="去除空行和错误"></li>
+<li>选择<strong>关闭并应用</strong>。</li>
+</ol>
+<blockquote>
+<p>在<strong>数据</strong>选项卡，验证汇总表单中数据已经加载到Power BI Desktop汇总表。</p>
+</blockquote>
+<h2 id="创建度量值">创建度量值</h2>
+<h3 id="汇总度量值---总数">汇总度量值 - 总数</h3>
+<ol>
+<li>总数代表了汇总表单中数据的总和，也就是汇总表单中的总行数。</li>
+<li>选择<strong>数据</strong>选项卡， 点击<strong>新建度量值</strong>。
+<img src="images/2022-bi-new-measure-btn.png" alt="新建度量值"></li>
+<li>在公式编辑框中，输入总数的DAX计算方法，我们使用CountRows.</li>
+</ol>
+<pre><code>总数 = COUNTROWS('汇总')
+</code></pre>
+<h3 id="汇总度量值---累计确诊">汇总度量值 - 累计确诊</h3>
+<ol>
+<li>在总数中， <strong>类型</strong>是<strong>确诊</strong>的数据就是累计确诊的值。</li>
+<li>使用同样方法，<strong>新建度量值</strong>。</li>
+<li>在公式编辑框中，输入累计确诊的计算方法。</li>
+</ol>
+<pre><code>累计确诊 = CALCULATE([总数],'汇总'[类型] = &quot;确诊&quot;)
+</code></pre>
+<h3 id="汇总度量值---其他值">汇总度量值 - 其他值</h3>
+<p><em>依此类推， 我们依次创建其他度量值</em>。</p>
+<p>无症状感染者(ALL)：</p>
+<pre><code>无症状感染者(ALL) = CALCULATE([总数],'汇总'[类型] = &quot;无症状&quot;)
+</code></pre>
+<p>无症状转确诊病例：</p>
+<pre><code>无症状转确诊病例 = CALCULATE([总数],'汇总'[来源] = &quot;无症状转换&quot;)
+</code></pre>
+<p>无症状感染者(未确诊)：</p>
+<pre><code>无症状感染者(未确诊) = [无症状感染者(ALL)] - [无症状转确诊病例]
+</code></pre>
+<p>新增感染人数：
+新增感染人数就是总数去除无症状转确诊的人数。</p>
+<pre><code>新增感染人数 = [总数] - [无症状转确诊病例]
+</code></pre>
+<p>筛查发现的新增感染人数：</p>
+<pre><code>筛查发现的新增感染人数 = CALCULATE([总数],'汇总'[来源] = &quot;筛查发现&quot;)
+</code></pre>
+<p>筛查发现的确诊病例：</p>
+<pre><code>筛查发现的确诊病例 = CALCULATE([筛查发现的新增感染人数],'汇总'[类型] = &quot;确诊&quot;)
+</code></pre>
+<p>筛查发现的无症状感染者：</p>
+<pre><code>筛查发现的无症状感染者 = CALCULATE('汇总'[筛查发现的新增感染人数],'汇总'[来源] = &quot;无症状&quot;)
+</code></pre>
+<h2 id="创建文件夹管理汇总度量值">创建文件夹管理汇总度量值</h2>
+<ol>
+<li>选择<strong>模型</strong>选项卡， 展开<strong>属性</strong>窗口， 在<strong>字段</strong>窗口中，点击任意字段名称。</li>
+<li>在<strong>属性</strong>窗口中， 定位到<strong>显示文件夹</strong>， 输入文件夹名称，例如， 汇总。</li>
+<li>按Enter确认后，可以看到选中字段已经放入了汇总文件夹中。
+<img src="images/2022-bi-folder.png" alt="创建文件夹"></li>
+<li>将其他汇总度量值依次拖入该文件夹。</li>
+</ol>
+<h3 id="占比度量值---今日无症状病例占新增感染人数比率">占比度量值 - 今日无症状病例占新增感染人数比率</h3>
+<ol>
+<li>计算比例，我们使用<code>DIVIDE</code>函数，并将分子/分母传入参数中。</li>
+<li>在<strong>数据</strong>选项卡， 点击<strong>新建度量值</strong>。</li>
+<li>在公式编辑框中，输入<code>今日无症状病例占新增感染人数比率</code>的计算方法。</li>
+<li>选择<strong>以百分比显示此列中的值</strong>。
+<img src="images/2022-bi-percentage.png" alt="设置以百分比显示"></li>
+</ol>
+<pre><code>今日无症状病例占新增感染人数比率 = DIVIDE([无症状感染者(ALL)], [新增感染人数])
+</code></pre>
+<h3 id="占比度量值---其他值">占比度量值 - 其他值</h3>
+<p><em>依此类推， 我们依次创建其他度量值</em>。</p>
+<p>筛查发现占新增感染人数的比率：</p>
+<pre><code>筛查发现占新增感染人数的比率 = DIVIDE([筛查发现的新增感染人数], [新增感染人数])
+</code></pre>
+<p>无症状转确诊病例占无症状感染者比率：</p>
+<pre><code>无症状转确诊病例占无症状感染者比率 = DIVIDE([无症状转确诊病例], [无症状感染者(ALL)])
+</code></pre>
+<p>无症状转确诊病例占确诊病例比率：</p>
+<pre><code>无症状转确诊病例占确诊病例比率 = DIVIDE([无症状转确诊病例], [累计确诊])
+</code></pre>
+<p>无症状感染者（未确诊）占总感染人数比率：</p>
+<pre><code>无症状感染者（未确诊）占总感染人数比率 = DIVIDE([无症状感染者(未确诊)], [新增感染人数])
+</code></pre>
+<p>死亡占确诊比率：</p>
+<pre><code>死亡占确诊比率 = DIVIDE([死亡人数], [累计确诊])
+</code></pre>
+<h3 id="创建文件夹管理占比度量值">创建文件夹管理占比度量值</h3>
+<p><em>同样方法创建文件夹来组织占比度量值。</em></p>
+<h2 id="总结">总结</h2>
+<p>我们以疫情数据集为例，在Power BI Desktop中使用<strong>新建度量值</strong>来创建了分类汇总数据和占比数据， 其中用的了COUNTROWS, CALCULATE 和DIVID函数。在模型中，我使用<strong>显示文件夹</strong>功能将度量值按类别放到不同的文件夹中。</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/QijieXue/mydocs/blob/main/articles/powerbi/2022-05-24-power-bi-covid-19-sha-report.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
