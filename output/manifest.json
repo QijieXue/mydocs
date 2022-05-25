@@ -125,6 +125,64 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/management/2022-05-24-stimulating-people.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/management/2022-05-24-stimulating-people.html",
+          "hash": "Lo/nFxa8IWcndkqi7ZmCyXi3jRoKp/DZCrvEAvtQUh4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/management/images/maslow-hierarchy-of-needs.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/management/images/maslow-hierarchy-of-needs.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/management/images/two-factor-theory.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "articles/management/images/two-factor-theory.PNG"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/management/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/management/intro.html",
+          "hash": "eOUBl+pmQo1HNueX+39W759HuCNYNfLttawMeX8wClE="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/management/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/management/toc.html",
+          "hash": "aeUzI+ylm+4lXYPj+KVkiH6UIbZ7YBJaTkijPn1+cLc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "articles/powerbi/2021-08-18-power-bi-create-date-table.md",
       "output": {
         ".html": {
@@ -132,7 +190,7 @@
           "hash": "b6/WsTBL6Jwzw/5Ykw1olOefm3Y2+6Ury+LjC/SwRlw="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -144,7 +202,7 @@
           "hash": "QIOgQ0qQzZ6mk2vQPcNEhQac3MsFoJyIz9jb7jY3T4g="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -244,7 +302,7 @@
           "hash": "oaLBvykLHMQre71LroP1wdLpbEwFnB6YGoFtjFOrWsc="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -265,7 +323,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "6JzgGyYHItENgOi9Eg0NjyA1IoI6EzcFWJWUv1oerE8="
+          "hash": "bO2F2iKCdu0eoykg3udQmyNot2a7qG4X+SCCZUaOTbw="
         }
       },
       "is_incremental": false,
@@ -308,8 +366,8 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 10,
-          "skipped_file_count": 9
+          "total_file_count": 12,
+          "skipped_file_count": 11
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
