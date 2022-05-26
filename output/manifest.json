@@ -129,10 +129,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/management/2022-05-24-stimulating-people.html",
-          "hash": "MLmuIpDBxSCC3BbQqSWKE7F2eeqwagw+CkT/Oc5C8ys="
+          "hash": "BhWc9kmsN/YDA0YU9HkkInk+GFcOB7YhjLadDdBF7h4="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -144,7 +144,7 @@
           "hash": "ICKPLKuPCHlaUYbLP3tb+3RSipCDzX7NYYUuAKg4x88="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
