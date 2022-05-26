@@ -136,11 +136,45 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "articles/management/2022-05-25-quality-assurance.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/management/2022-05-25-quality-assurance.html",
+          "hash": "h4HHuIN2bPDqGagN5gv+9okDvdxR+T8xKXQZ0lL3NMs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/management/images/coq.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "articles/management/images/coq.PNG"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Resource",
       "source_relative_path": "articles/management/images/maslow-hierarchy-of-needs.png",
       "output": {
         "resource": {
           "relative_path": "articles/management/images/maslow-hierarchy-of-needs.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/management/images/pdca.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/management/images/pdca.png"
         }
       },
       "is_incremental": false,
@@ -163,10 +197,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/management/intro.html",
-          "hash": "eOUBl+pmQo1HNueX+39W759HuCNYNfLttawMeX8wClE="
+          "hash": "y1oHhlfq2FtqgbATZUoo0v27KPzyT7Pm3DpVeui48p0="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -175,7 +209,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/management/toc.html",
-          "hash": "aeUzI+ylm+4lXYPj+KVkiH6UIbZ7YBJaTkijPn1+cLc="
+          "hash": "YqrhfsRXtRQOkbrxtUH6rFRKTj09hI5q2TPiAmKJvDQ="
         }
       },
       "is_incremental": false,
@@ -366,7 +400,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 12,
+          "total_file_count": 13,
           "skipped_file_count": 11
         },
         "ManagedReferenceDocumentProcessor": {
