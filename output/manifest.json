@@ -53,6 +53,64 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/git/2022-05-29-git-commands.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/git/2022-05-29-git-commands.html",
+          "hash": "VbNJPZg5dHXY4xdoZdjfvH3F5YuRZURN0FxOmbN2kPo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/git/images/git-merge-rebase-reset.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/git/images/git-merge-rebase-reset.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/git/images/git-rebase.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/git/images/git-rebase.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/git/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/git/intro.html",
+          "hash": "S9Sq95wI8+CEQSZMqDkJzHSdAH4JpR3M0y71SmftCQ0="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/git/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/git/toc.html",
+          "hash": "/1/0kRagTCkVLAC5wPBfojnU9UhPS6pgfil3E0mLfXA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "articles/intro.md",
       "output": {
         ".html": {
@@ -132,7 +190,7 @@
           "hash": "BhWc9kmsN/YDA0YU9HkkInk+GFcOB7YhjLadDdBF7h4="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -357,7 +415,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "bO2F2iKCdu0eoykg3udQmyNot2a7qG4X+SCCZUaOTbw="
+          "hash": "AOa3jATN7g8ZCEXjVKBOoqVCVx3emZwyRHTutAVdXFU="
         }
       },
       "is_incremental": false,
@@ -400,8 +458,8 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 13,
-          "skipped_file_count": 12
+          "total_file_count": 15,
+          "skipped_file_count": 14
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,

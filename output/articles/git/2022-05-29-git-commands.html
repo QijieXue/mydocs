@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Git&#24120;&#29992;&#21629;&#20196; </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Git&#24120;&#29992;&#21629;&#20196; ">
+    <meta name="generator" content="docfx 2.59.0.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="git常用命令"><code>Git</code>常用命令</h1>
+
+<h2 id="基本操作">基本操作</h2>
+<ol>
+<li><p>查看远程连接关系</p>
+<pre><code>git remote -v
+</code></pre>
+</li>
+<li><p>切换已存在本地分支</p>
+<pre><code>git checkout my_branch
+</code></pre>
+</li>
+<li><p>如果本地分支不存在，从当前分支创建新分支并切换到新分支</p>
+<pre><code>git checkout -b my_branch
+</code></pre>
+</li>
+<li><p>同名分支, 从远程拉取更新到本地 (注意<code>git pull</code>只拉取当前分支, 所以注意先切换分支)</p>
+<pre><code>git pull
+</code></pre>
+</li>
+<li><p>添加本地更改</p>
+<pre><code>git add -A
+</code></pre>
+</li>
+<li><p>提交本地更改</p>
+<pre><code>git commit -m 'comment'
+</code></pre>
+</li>
+<li><p>同名分支, 从本地推送更新到远程</p>
+<pre><code>git push origin my_branch
+</code></pre>
+</li>
+</ol>
+<h2 id="高级操作">高级操作</h2>
+<ol>
+<li><p><strong>远程覆盖本地(强制)</strong></p>
+<p>用远程分支<code>origin/my_branch</code>重写本地<code>main</code>分支</p>
+<pre><code>git checkout main
+git reset --hard origin/my_branch 
+</code></pre>
+</li>
+<li><p>本地覆盖远程(强制)</p>
+<pre><code>git push origin main --force
+</code></pre>
+</li>
+</ol>
+<h2 id="git-branch-分支操作"><code>git branch</code> 分支操作</h2>
+<ol>
+<li><p>列出本地存在的分支，当前分支的前面用*标记</p>
+<pre><code>git branch
+</code></pre>
+</li>
+<li><p>列出所有远程分支</p>
+<pre><code>git branch -r
+</code></pre>
+</li>
+<li><p>列出所有分支，包括本地和远程</p>
+<pre><code>git branch -a
+</code></pre>
+</li>
+<li><p>创建分支</p>
+<pre><code>git branch my_branch
+</code></pre>
+</li>
+<li><p>从远程分支创建本地分支，并建立对应关系</p>
+<pre><code>git branch my_branch origin/my_branch
+</code></pre>
+</li>
+<li><p>删除分支</p>
+<pre><code>git branch -d my_branch 
+</code></pre>
+<pre><code>git branch -D my_branch  #强制删除分支
+</code></pre>
+</li>
+<li><p>删除远程分支</p>
+<pre><code>git push origin --delete my_branch
+</code></pre>
+</li>
+<li><p>查看本地分支与远程分支的对应关系</p>
+<pre><code>git branch -vv
+</code></pre>
+</li>
+<li><p>重命名分支</p>
+<pre><code>git branch -m my_branch my_newBranch
+</code></pre>
+</li>
+</ol>
+<h3 id="git-checkout"><code>git checkout</code></h3>
+<ol>
+<li><p><strong>操作文件</strong><br>
+放弃单个文件的修改</p>
+<pre><code>git checkout filename
+</code></pre>
+<p>放弃当前目录下的修改</p>
+<pre><code>git checkout .
+</code></pre>
+</li>
+<li><p><strong>操作分支</strong><br>
+将分支切换到main</p>
+<pre><code>git checkout main
+</code></pre>
+</li>
+<li><p>如果本地分支不存在，则先创建分支，再切换到新分支</p>
+<pre><code>git checkout -b my_branch
+</code></pre>
+</li>
+</ol>
+<h2 id="合并分支git-merge-vs-git-rebase">合并分支<code>git merge</code> vs <code>git rebase</code></h2>
+<ol>
+<li><p>本地2个分支合并, 将<code>my_branch</code>合并到<code>main</code></p>
+<pre><code>git checkout main
+git merge my_branch
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>假如合并由冲突，需要手动解决冲突。</p>
+</div>
+</li>
+<li><p>不同分支之间的同步, 用<code>rebase</code>命令将分支<code>my_branch</code>的基修改到<code>main</code>最新提交</p>
+<pre><code>git checkout my_branch
+git rebase main
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>rebase也可能遇到冲突， 对于每个冲突文件，需要手动合并</p>
+</div>
+<pre><code>git add -A
+git commit -m &quot;resolve conflicts&quot;
+</code></pre>
+<p>然后，</p>
+<pre><code>git rebase --continue
+</code></pre>
+</li>
+</ol>
+<h2 id="附件">附件</h2>
+<p>git分支合并方式示意图
+<a href="images/git-merge-rebase-reset.png"><img src="images/git-merge-rebase-reset.png" alt="git分支合并方式示意图"></a></p>
+<p>git rebase示例
+<a href="images/git-rebase.png"><img src="images/git-rebase.png" alt="git rebase示例"></a></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/QijieXue/mydocs/blob/main/articles/git/2022-05-29-git-commands.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
