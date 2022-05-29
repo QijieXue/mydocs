@@ -81,6 +81,7 @@
     ```
     git branch -d my_branch 
     ```
+    强制删除分支
     ```
     git branch -D my_branch  #强制删除分支
     ```
@@ -131,7 +132,7 @@
     git merge my_branch
     ```
     > [!Tip]
-    > 假如合并由冲突，需要手动解决冲突。
+    > 假如合并由冲突，需要手动解决冲突
 
 1. 不同分支之间的同步, 用`rebase`命令将分支`my_branch`的基修改到`main`最新提交
     ```
@@ -149,6 +150,7 @@
     ```
     git rebase --continue
     ```
+
 ## 附件
 git分支合并方式示意图
 [![git分支合并方式示意图](images/git-merge-rebase-reset.png)](images/git-merge-rebase-reset.png)
