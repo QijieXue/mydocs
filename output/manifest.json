@@ -291,10 +291,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/powerbi/2022-05-24-power-bi-covid-19-sha-report.html",
-          "hash": "QIOgQ0qQzZ6mk2vQPcNEhQac3MsFoJyIz9jb7jY3T4g="
+          "hash": "mC5AJaIKRqSTynN9oD1DbXcsEMXdPRVh/1OKL8Sb7Gs="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -459,7 +459,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 15,
-          "skipped_file_count": 15
+          "skipped_file_count": 14
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
