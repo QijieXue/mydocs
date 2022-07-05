@@ -282,7 +282,7 @@
           "hash": "b6/WsTBL6Jwzw/5Ykw1olOefm3Y2+6Ury+LjC/SwRlw="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -292,6 +292,18 @@
         ".html": {
           "relative_path": "articles/powerbi/2022-05-24-power-bi-covid-19-sha-report.html",
           "hash": "mC5AJaIKRqSTynN9oD1DbXcsEMXdPRVh/1OKL8Sb7Gs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/powerbi/2022-07-05-azdo-wi-bi.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/powerbi/2022-07-05-azdo-wi-bi.html",
+          "hash": "T6C7L2L2XXIIZMXQh48j+r7nn1Wz8iVR8mxPqsNsKS8="
         }
       },
       "is_incremental": false,
@@ -394,7 +406,7 @@
           "hash": "oaLBvykLHMQre71LroP1wdLpbEwFnB6YGoFtjFOrWsc="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -403,7 +415,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/powerbi/toc.html",
-          "hash": "y3r1lne9DcxdYuGfN2iyHATlssfwOX8n7OPHrHM+GBg="
+          "hash": "eNpNX0iSFiv19srobU7OdtWklVSDsQKKEapds/VCna0="
         }
       },
       "is_incremental": false,
@@ -458,8 +470,8 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 15,
-          "skipped_file_count": 14
+          "total_file_count": 16,
+          "skipped_file_count": 15
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
