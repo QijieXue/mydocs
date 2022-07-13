@@ -279,7 +279,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/powerbi/2021-08-18-power-bi-create-date-table.html",
-          "hash": "f+xGkBqRyzkir4GQe75EDwdNzokedTqPiZXsAxINSns="
+          "hash": "PU8hIa3rxBYNc1nGKdHV6va++IlSUB2PwJ1A7h86Msc="
         }
       },
       "is_incremental": false,
@@ -337,6 +337,17 @@
       "output": {
         "resource": {
           "relative_path": "articles/powerbi/images/2022-bi-load-data-remove-rows.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "articles/powerbi/images/2022-bi-month-by-month-data.png",
+      "output": {
+        "resource": {
+          "relative_path": "articles/powerbi/images/2022-bi-month-by-month-data.png"
         }
       },
       "is_incremental": false,

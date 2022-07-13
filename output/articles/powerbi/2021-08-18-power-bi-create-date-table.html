@@ -250,6 +250,7 @@ SWITCH(true(),
 [Month]=12, &quot;Dec&quot;)
 RETURN [Fiscal Quarter] &amp;&quot; &quot;&amp;[Month]&amp;&quot;-&quot;&amp;MonthName
 </code></pre>
+<p><a href="images/2022-bi-month-by-month-data.png#lightbox"><img src="images/2022-bi-month-by-month-data.png" alt="Screenshot of Date table"></a></p>
 <h2 id="datekey列">DateKey列</h2>
 <p><code>DateKey</code>列用于建立表之间关系， 可以精确到天。在Calendar表和事实表中都依据某个日期列建立DateKey序列列。</p>
 <pre><code>DateKey = FORMAT([Date],&quot;yyyyMMdd&quot;)
