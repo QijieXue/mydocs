@@ -76,6 +76,9 @@
 <p>创建Date列，要求日期序列没有间隔。例如，创建从7/1/2018到6/30/2022的时间序列，新建列，使用CALENDAR函数的DAX语法：</p>
 <pre><code>Date = CALENDAR(&quot;7/1/2018&quot;, &quot;6/30/2022&quot;)
 </code></pre>
+<p>实际工作中，生成Calendar日期的区间可能由某个表的某列决定， 这个是时候就不需要hard code起始和结束日期了， 而是由以下表达式完成:</p>
+<pre><code>Date = CALENDAR(Min('Table1'[Released Date]), Max('Table1'[Released Date]))
+</code></pre>
 <h3 id="year列">Year列</h3>
 <p>创建Year列，新建列，使用Year函数：</p>
 <pre><code>Year = YEAR('Date'[Date])
@@ -164,11 +167,19 @@ SWITCH(true(),
 'Date'[Month]=12,&quot;十二月&quot;)
 </code></pre>
 <h3 id="fiscal-year列">Fiscal Year列</h3>
-<p>创建Fiscal Year列，在很多公司，财年开始于7月，即7/1/2019的Fiscal Year是FY20, 7/1/2019的Fiscal Quarter是FQ1，新建列，使用IF函数来判断当前日期月份是否大于等于7，为真则FY Year为当前Year+1, 否则FY Year为当前Year, 再使用Right函数取年份后2位：</p>
+<p>创建Fiscal Year列，在很多公司，财年开始于7月，即7/1/2019的Fiscal Year是FY20, 7/1/2019的Fiscal Quarter是FY20 Q1，新建列，使用IF函数来判断当前日期月份是否大于等于7，为真则FY Year为当前Year+1, 否则FY Year为当前Year, 再使用Right函数取年份后2位：</p>
 <pre><code class="lang-DAX">Fiscal Year = 
 IF('Date'[Month]&gt;=7,
 &quot;FY&quot;&amp;RIGHT('Date'[Year]+1,2),
 &quot;FY&quot;&amp;RIGHT('Date'[Year],2))
+</code></pre>
+<p>也可以定义变量进行计算：</p>
+<pre><code class="lang-dotnetcli">Fiscal Year = 
+var YearNumber = 
+SWITCH(true(),
+[Month] &gt;= 7, [Year]+1,
+[Month] &gt;= 1, [Year])
+Return &quot;FY&quot;&amp; Right(YearNumber,2)
 </code></pre>
 <h3 id="fiscal-quarter列">Fiscal Quarter列</h3>
 <p>创建Fiscal Month列，在很多公司，财年开始于7月，即：</p>
@@ -200,11 +211,48 @@ IF('Date'[Month]&gt;=7,
 </table>
 <p>新建列，使用SWITCH函数，确保表达式为TRUE()，然后在值和结果中输入不同条件下的结果：</p>
 <pre><code class="lang-DAX">Fiscal Quarter = 
+var QuarterNumber = 
 SWITCH(true(),
-'Date'[Quarter]=1,&quot;FQ3&quot;,
-'Date'[Quarter]=2,&quot;FQ4&quot;,
-'Date'[Quarter]=3,&quot;FQ1&quot;,
-'Date'[Quarter]=4,&quot;FQ2&quot;)
+'Date'[Quarter]=1,&quot;Q3&quot;,
+'Date'[Quarter]=2,&quot;Q4&quot;,
+'Date'[Quarter]=3,&quot;Q1&quot;,
+'Date'[Quarter]=4,&quot;Q2&quot;)
+return [Fiscal Year]&amp;&quot; &quot;&amp;QuarterNumber
+</code></pre>
+<p>也可通过Month进行判断：</p>
+<pre><code class="lang-dotnetcli">Fiscal Quarter = 
+var QuarterNumber = 
+SWITCH(true(),
+[Month] &gt;= 10, &quot;Q2&quot;,
+[Month] &gt;= 7, &quot;Q1&quot;,
+[Month] &gt;= 4, &quot;Q4&quot;,
+[Month] &gt;= 1, &quot;Q3&quot;)
+return [Fiscal Year]&amp;&quot; &quot;&amp;QuarterNumber
+</code></pre>
+<h2 id="在视觉控件中让数据按照fiscal-year-quarter-month正序显示">在视觉控件中让数据按照Fiscal Year, Quarter, Month正序显示</h2>
+<p>表格中的数据需要按月显示当月销售数据和当月YTD数据， 这个时候需要让时间列能够自然排序。有个敲门就是让月份显示的复杂一点，让Month字符串以如下格式显示：
+<code>FY22 Q4 5-May</code>
+修改Month Name(English)列的表达式如下：</p>
+<pre><code class="lang-dotnetcli">Month Name(English) = 
+var MonthName = 
+SWITCH(true(),
+[Month]=1, &quot;Jan&quot;,
+[Month]=2, &quot;Feb&quot;,
+[Month]=3, &quot;Mar&quot;,
+[Month]=4, &quot;Apr&quot;,
+[Month]=5, &quot;May&quot;,
+[Month]=6, &quot;Jun&quot;,
+[Month]=7, &quot;Jul&quot;,
+[Month]=8, &quot;Aug&quot;,
+[Month]=9, &quot;Sep&quot;,
+[Month]=10, &quot;Oct&quot;,
+[Month]=11, &quot;Nov&quot;,
+[Month]=12, &quot;Dec&quot;)
+RETURN [Fiscal Quarter] &amp;&quot; &quot;&amp;[Month]&amp;&quot;-&quot;&amp;MonthName
+</code></pre>
+<h2 id="datekey列">DateKey列</h2>
+<p><code>DateKey</code>列用于建立表之间关系， 可以精确到天。在Calendar表和事实表中都依据某个日期列建立DateKey序列列。</p>
+<pre><code>DateKey = FORMAT([Date],&quot;yyyyMMdd&quot;)
 </code></pre>
 </article>
           </div>

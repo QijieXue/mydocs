@@ -279,7 +279,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/powerbi/2021-08-18-power-bi-create-date-table.html",
-          "hash": "b6/WsTBL6Jwzw/5Ykw1olOefm3Y2+6Ury+LjC/SwRlw="
+          "hash": "f+xGkBqRyzkir4GQe75EDwdNzokedTqPiZXsAxINSns="
         }
       },
       "is_incremental": false,
@@ -294,7 +294,7 @@
           "hash": "mC5AJaIKRqSTynN9oD1DbXcsEMXdPRVh/1OKL8Sb7Gs="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -306,7 +306,7 @@
           "hash": "T6C7L2L2XXIIZMXQh48j+r7nn1Wz8iVR8mxPqsNsKS8="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -406,7 +406,7 @@
           "hash": "oaLBvykLHMQre71LroP1wdLpbEwFnB6YGoFtjFOrWsc="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {

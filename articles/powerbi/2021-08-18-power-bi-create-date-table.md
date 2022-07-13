@@ -9,7 +9,10 @@
 ```
 Date = CALENDAR("7/1/2018", "6/30/2022")
 ```
-
+实际工作中，生成Calendar日期的区间可能由某个表的某列决定， 这个是时候就不需要hard code起始和结束日期了， 而是由以下表达式完成:
+```
+Date = CALENDAR(Min('Table1'[Released Date]), Max('Table1'[Released Date]))
+```
 ### Year列
 创建Year列，新建列，使用Year函数：
 ```
@@ -120,12 +123,22 @@ SWITCH(true(),
 ```
 
 ### Fiscal Year列
-创建Fiscal Year列，在很多公司，财年开始于7月，即7/1/2019的Fiscal Year是FY20, 7/1/2019的Fiscal Quarter是FQ1，新建列，使用IF函数来判断当前日期月份是否大于等于7，为真则FY Year为当前Year+1, 否则FY Year为当前Year, 再使用Right函数取年份后2位：
+创建Fiscal Year列，在很多公司，财年开始于7月，即7/1/2019的Fiscal Year是FY20, 7/1/2019的Fiscal Quarter是FY20 Q1，新建列，使用IF函数来判断当前日期月份是否大于等于7，为真则FY Year为当前Year+1, 否则FY Year为当前Year, 再使用Right函数取年份后2位：
 ```DAX
 Fiscal Year = 
 IF('Date'[Month]>=7,
 "FY"&RIGHT('Date'[Year]+1,2),
 "FY"&RIGHT('Date'[Year],2))
+```
+
+也可以定义变量进行计算：
+```dotnetcli
+Fiscal Year = 
+var YearNumber = 
+SWITCH(true(),
+[Month] >= 7, [Year]+1,
+[Month] >= 1, [Year])
+Return "FY"& Right(YearNumber,2)
 ```
 
 ### Fiscal Quarter列
@@ -141,9 +154,51 @@ IF('Date'[Month]>=7,
 新建列，使用SWITCH函数，确保表达式为TRUE()，然后在值和结果中输入不同条件下的结果：
 ```DAX
 Fiscal Quarter = 
+var QuarterNumber = 
 SWITCH(true(),
-'Date'[Quarter]=1,"FQ3",
-'Date'[Quarter]=2,"FQ4",
-'Date'[Quarter]=3,"FQ1",
-'Date'[Quarter]=4,"FQ2")
+'Date'[Quarter]=1,"Q3",
+'Date'[Quarter]=2,"Q4",
+'Date'[Quarter]=3,"Q1",
+'Date'[Quarter]=4,"Q2")
+return [Fiscal Year]&" "&QuarterNumber
+```
+
+也可通过Month进行判断：
+```dotnetcli
+Fiscal Quarter = 
+var QuarterNumber = 
+SWITCH(true(),
+[Month] >= 10, "Q2",
+[Month] >= 7, "Q1",
+[Month] >= 4, "Q4",
+[Month] >= 1, "Q3")
+return [Fiscal Year]&" "&QuarterNumber
+```
+
+## 在视觉控件中让数据按照Fiscal Year, Quarter, Month正序显示
+表格中的数据需要按月显示当月销售数据和当月YTD数据， 这个时候需要让时间列能够自然排序。有个敲门就是让月份显示的复杂一点，让Month字符串以如下格式显示：
+`FY22 Q4 5-May`
+修改Month Name(English)列的表达式如下：
+```dotnetcli
+Month Name(English) = 
+var MonthName = 
+SWITCH(true(),
+[Month]=1, "Jan",
+[Month]=2, "Feb",
+[Month]=3, "Mar",
+[Month]=4, "Apr",
+[Month]=5, "May",
+[Month]=6, "Jun",
+[Month]=7, "Jul",
+[Month]=8, "Aug",
+[Month]=9, "Sep",
+[Month]=10, "Oct",
+[Month]=11, "Nov",
+[Month]=12, "Dec")
+RETURN [Fiscal Quarter] &" "&[Month]&"-"&MonthName
+```
+## DateKey列
+`DateKey`列用于建立表之间关系， 可以精确到天。在Calendar表和事实表中都依据某个日期列建立DateKey序列列。
+```
+DateKey = FORMAT([Date],"yyyyMMdd")
 ```
